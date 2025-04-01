@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCDO BlockChain</title>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+
+    <script src=vendor/jquery/1.12.4/jquery.js></script>
+    <script src=vendor/bootstrap/3.3.7/js/bootstrap.js></script>
+    <script src=vendor/bootstrap-fileinput/5.1.0/js/fileinput.js></script>
+    <script src=vendor/bootstrap-fileinput/5.1.0/js/locales/zh.js></script>
+    <link rel="shortcut icon" href=favicon.ico>
+    <link href=vendor/bootstrap/3.3.7/css/bootstrap.css rel=stylesheet>
+    <link href=vendor/bootstrap-fileinput/5.1.0/css/fileinput.css rel=stylesheet>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src=js/main.js></script>
+    <style>
+        .fas.fa-camera.fa-2x{
+            height: 30px;
+            width: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        .navbar-nav > li > .dropdown-menu {
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: transparent;
+            color:#fff;
+        }
+        .dropdown-menu > li > a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+<body style="background-color: #0e002f;padding-top: 0px; padding-bottom: 0px;">
+<div class="bg">
+    <!--网页导航栏-->
+    <nav class="navbar navbar-fixed-top navbar-transparent" role="navigation">
+        <div class="container-fluid" style="margin-left: 12%; margin-right: 12%">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="color: #fff">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </button>
+                <a style="color:#fff" class="navbar-brand" href="/">
+                    <img alt="Brand" src="favicon2.ico" class="fas fa-camera fa-2x">
+                    <span style="font-size:12px">SCDO</span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" style="margin-top: 10px;">
+
+                    <!--<li class="dropdown">
+                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">Currency <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li style=' background-image:url("img/icon_menu_mtc.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
+                                <a href="#">SCDO</a></li>
+                             <li style=' background-image:url("img/icon_menu_ccash.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
+                                <a href="#">CCASH</a></li>
+                            <li style=' background-image:url("img/icon_menu_mtcash.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
+                                <a href="#">MTCASH</a></li>
+                        </ul>
+                    </li>-->
+                    <li><a style="color:#fff" href="./scdo.html">About SCDO</a></li>
+                    <li><a style="color:#fff" href="./news.html">News</a></li>
+                    <!--<li><a style="color:#fff" href="http://scan.scdo.pro/" target="_blank">Block-->
+                    <li><a style="color:#fff" href="https://scdoscan.io/#/" target="_blank">Block
+                        Explorer
+                        <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a style="color:#fff" href="https://github.com/scdoproject/scdowallet/releases" target="_blank">
+                        Wallet
+                        <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a style="color:#fff" href="https://scdo-project.gitbook.io/scdo-wiki/" target="_blank">
+                        Wiki
+                        <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a style="color:#fff" href="https://github.com/scdoproject" target="_blank">
+                        Github
+                        <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <!--
+                    <li class="dropdown">
+                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">Wallet <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <img src="img/qrcode.jpg">
+                            </li>
+
+                        </ul>
+                    </li>-->
+                    
+                    <!--<li><a style="color:#fff" href="./whitepaper.html">White Paper</a></li>-->
+                    <li><a style="color:#fff" href="pdf/SCDO_Whitepaper_s.pdf#toolbar=0" target="_blank">White Paper</a></li>
+                    <!--<li><a style="color:#fff" href="./tech.html">Technology</a></li>-->
+                    <!--<li><a style="color:#fff" href="./contactus.html">Contact Us</a></li>-->
+                </ul>
+                <!--
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown" style="width:165px;">
+                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">English <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.zh.html">Simplified Chinese</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+
+    <section id="tech">
+        <div class="container" style=" height: auto; width:auto; color: #fff;">
+            <div class="row col-xs-12">
+                <div style="margin-bottom: 10px; margin-top: 80px;;" class="col-lg-12 mx-auto">
+                    <div>
+                        <h3 class="text-center">SCDO News</h3>
+                        <div class="p-3 mb-2" style="margin-top:30px; width:auto; heigth:100px;">
+                            <ul class="list-group text-primary" style="">
+                                <li class="list-group-item"><h3>SCDO Launches Smart Contract Tokens on HyperPay Wallet</h3>
+                                    <p>&nbsp;</p>
+                                    <!--                                    <p>Click on the button to toggle between showing and hiding content.</p>-->
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Sidechain">More...</button>
+                                        <!-- Modal -->
+                                        <div id="Sidechain" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">SCDO Launches Smart Contract Tokens on HyperPay Wallet</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/Smart_Contract_Tokens_Lunches.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item"><h3>SCDO version 2.0.0 Bluefin release announcement</h3>
+                                    <p>&nbsp;</p>
+                                    <!--                                    <p>Click on the button to toggle between showing and hiding content.</p>-->
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#bluefin_release">More...</button>
+                                        <!-- Modal -->
+                                        <div id="bluefin_release" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">SCDO Mined Token Locked Announcement</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/2.0.0_release.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item"><h3>A Letter to Community</h3>
+                                    <p>&nbsp;</p>
+                                    <!--                                    <p>Click on the button to toggle between showing and hiding content.</p>-->
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#letter_to_community">More...</button>
+                                        <!-- Modal -->
+                                        <div id="letter_to_community" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">A Letter to Community</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/letter_to_community.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item"><h3>SCDO Mined Token Locked Announcement</h3>
+                                    <p>&nbsp;</p>
+                                    <!--                                    <p>Click on the button to toggle between showing and hiding content.</p>-->
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#token_release">More...</button>
+                                        <!-- Modal -->
+                                        <div id="token_release" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">SCDO Mined Token Locked Announcement</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/token_release.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item"><h3>SCDO Launch Announcement</h3>
+                                    <p>SCDO mainnet goes live at 1:00:00 UTC January 5th, 2021! We are excited to officially release the version 1.0.0 of SCDO node. This is the initial release, which can be used to connect to the SCDO mainnet...</p>
+                                    <p>&nbsp;</p>
+                                    <!--                                    <p>Click on the button to toggle between showing and hiding content.</p>-->
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#release_en">More...</button>
+                                        <!-- Modal -->
+                                        <div id="release_en" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">SCDO Launch Announcement</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/release_en.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item" style="display: none"><h3>SCDO主网上线通知 (中文)</h3>
+                                    <p>SCDO主网2021年1月5日 1:00:00 UTC正式上线，我们很高兴正式发布​SCDO​节点的​1.0.0​版本。这是初始版本，可用于连接到​SCDO​主网</p>
+                                    <p>Click on the button to toggle between showing and hiding content.</p>
+                                    <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Subchain" style="color:#fff" href="pdf/Stem.pdf.pdf#toolbar=0" target="_blank">More...</button>-->
+                                    <div class="modalContainer">
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#release_cn">更多...</button>
+                                        <!-- Modal -->
+                                        <div id="release_cn" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">SCDO主网上线通知</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <embed src="pdf/release_cn.pdf#toolbar=0" frameborder="0" width="100%" height="600px">
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<footer style="background-color: #000">
+    <div class="container container-fluid" style="margin-top: 0px; margin-bottom: 20px; color: #fff;font-size: 12px;">
+        <div class=" text-center"> COPYRIGHT©2020 SCDO Dev Team</div>
+       <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="right: 0px;text-align: right">Please beware of fake
+            accounts. For more information,please follow the official media platform of SCDO BlockChain.
+        </div>-->
+    </div>
+</footer>
+</body>
+</html>
