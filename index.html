@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SCDO Blockchain</title>
+    <title>GeekSphere</title>
     <meta name=viewport content="width=device-width,initial-scale=1">
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
 
@@ -10,10 +10,11 @@
     <script src=vendor/bootstrap/3.3.7/js/bootstrap.js></script>
     <script src=vendor/bootstrap-fileinput/5.1.0/js/fileinput.js></script>
     <script src=vendor/bootstrap-fileinput/5.1.0/js/locales/zh.js></script>
-    <link rel="shortcut icon" href=favicon.ico>
+    <link rel="shortcut icon" href="img/gklogo.ico">
     <link href=vendor/bootstrap/3.3.7/css/bootstrap.css rel=stylesheet>
     <link href=vendor/bootstrap-fileinput/5.1.0/css/fileinput.css rel=stylesheet>
     <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src=js/main.js></script>
     <style>
         .fas.fa-camera.fa-2x{
@@ -30,246 +31,374 @@
             margin-top: 0;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            background-color: transparent;
-            color:#fff;
+            background-color: rgba(74, 144, 226, 0.1);
         }
         .dropdown-menu > li > a {
-            display: block;
-            padding: 3px 20px;
-            clear: both;
-            font-weight: normal;
-            line-height: 1.42857143;
             color: #fff;
-            white-space: nowrap;
         }
-        #moving-text span {
-            display: inline-block;
-            position: relative;
-            animation: moveRight 1s ease infinite;
-            animation-delay: calc(var(--i) * 0.2s);
-        }
-        @keyframes moveRight {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(-10px);
-            }
+        .dropdown-menu > li > a:hover {
+            background-color: rgba(74, 144, 226, 0.3);
+            color: #fff;
         }
     </style>
 </head>
-<body style="background-color: #0e002f;padding-top: 0px; padding-bottom: 0px;">
-<div class="bg">
-    <!--网页导航栏-->
-    <nav class="navbar navbar-fixed-top navbar-transparent" role="navigation">
-        <div class="container-fluid" style="margin-left: 12%; margin-right: 12%">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="color: #fff">
-                    <span class="glyphicon glyphicon-align-justify"></span>
-                </button>
-                <a style="color:#fff" class="navbar-brand" href="/">
-                    <img alt="Brand" src="favicon2.ico" class="fas fa-camera fa-2x">
-                    <span style="font-size:12px">GeekSphere</span></a>
-            </div>
+<body>
+    <div>  // 移除 bg class
+        <!--网页导航栏-->
+        <nav class="navbar navbar-fixed-top navbar-transparent" role="navigation">
+            <div class="container-fluid" style="margin-left: 12%; margin-right: 12%">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="color: #fff">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <a style="color:#fff" class="navbar-brand" href="/">
+                        <img alt="Brand" src="img/gklogo.ico">
+                    </a>
+                </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav" style="margin-top: 10px;">
+                <style>
+                    .navbar-brand {
+                        padding: 5px 15px;  /* 减小内边距 */
+                        height: 60px;      /* 设置固定高度 */
+                        display: flex;     /* 使用 flex 布局使图片垂直居中 */
+                        align-items: center;
+                    }
+                    .navbar-brand img {
+                        height: 40px;     /* 调整 logo 高度 */
+                        width: auto;
+                    }
 
-                    <!--<li class="dropdown">
-                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true"
-                           aria-expanded="false">Currency <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li style=' background-image:url("img/icon_menu_mtc.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
-                                <a href="#">SCDO</a></li>
-                             <li style=' background-image:url("img/icon_menu_ccash.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
-                                <a href="#">CCASH</a></li>
-                            <li style=' background-image:url("img/icon_menu_mtcash.png");background-repeat:no-repeat;background-position:0px 5px;padding-left:14px;'>
-                                <a href="#">MTCASH</a></li>
-                        </ul>
-                    </li>-->
-                    <li><a style="color:#fff" href="./scdo.html">About SCDO</a></li>
-                    <li><a style="color:#fff" href="./news.html">News</a></li>
-                    <!--<li><a style="color:#fff" href="http://scan.scdo.pro/" target="_blank">Block-->
-                    <li><a style="color:#fff" href="https://scdoscan.io/#/" target="_blank">Block
-                        Explorer
-                        <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a style="color:#fff" href="https://github.com/scdoproject/scdowallet/releases" target="_blank">
-                        Wallet
-                        <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a style="color:#fff" href="https://scdo-project.gitbook.io/scdo-wiki/" target="_blank">
-                        Wiki
-                        <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a style="color:#fff" href="https://github.com/scdoproject" target="_blank">
-                        Github
-                        <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <!--
-                    <li class="dropdown">
-                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true"
-                           aria-expanded="false">Wallet <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <img src="img/qrcode.jpg">
-                            </li>
-
-                        </ul>
-                    </li>-->
+                    /* 调整导航栏其他元素 */
+                    .navbar-nav {
+                        margin-top: 0 !important;  /* 移除上边距 */
+                        height: 60px;            /* 与 navbar-brand 保持一致 */
+                    }
                     
-                    <!--<li><a style="color:#fff" href="./whitepaper.html">White Paper</a></li>-->
-                    <li><a style="color:#fff" href="pdf/SCDO_Whitepaper_s.pdf#toolbar=0" target="_blank">White Paper</a></li>
-                    <!--<li><a style="color:#fff" href="./tech.html">Technology</a></li>-->
-                    <!--<li><a style="color:#fff" href="./contactus.html">Contact Us</a></li>-->
-                </ul>
-                <!--
-                <ul class="nav navbar-nav navbar-right">
+                    .navbar-nav > li > a {
+                        line-height: 30px;     /* 调整文字行高 */
+                        padding-top: 15px;     /* 调整内边距 */
+                        padding-bottom: 15px;
+                    }
+                </style>
 
-                    <li class="dropdown" style="width:165px;">
-                        <a style="color:#fff" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true"
-                           aria-expanded="false">English <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.zh.html">Simplified Chinese</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                -->
-            </div><!-- /.navbar-collapse -->
-        </div>
-    </nav>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="margin-top: 10px;">
+                        <li><a style="color:#fff" href="./about.html">关于我们</a></li>
+                        <li><a style="color:#fff" href="./cases.html">成功案例</a></li>
+                        <li><a style="color:#fff" href="./careers.html">加入我们</a></li>
+                        <li><a style="color:#fff" href="./contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
 
-    <div class="container container-fluid">
+        <div class="container container-fluid">
+            <!-- 创建一个包含所有顶部内容的 banner 容器 -->
+            <div class="banner-wrapper" style="
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/banner.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                padding: 200px 0 100px;
+                text-align: center;">
+                
+                <div style="font-size: 42px;color:#fff;font-weight:bold;">
+                    GeekSphere
+                </div>
 
-        <div style="text-align: center;font-size: 36px;color:#fff;margin-top: 356px;font-weight:bold;">
-            GeekSphere
-        </div>
-
-        <div class="motto" style="text-align: center; font-size:28px;color:#fff;margin-top: 12px;">
-            <p>Empower Your Applications, Enrich Your Digital Asset</p>
-        </div>
-
-        <div class="glow" target="_blank" style="text-align: center; font-size:28px;color:#fff;margin-top: 30px;">
-            <p id="moving-text">
-                <a href="./news.html" title="Read more..."  style="font-size:28px;color:#fff;">
-                    <span style="--i:1;">GeekSphere</span>
-                    <span style="--i:2;">Launches</span>
-                    <span style="--i:3;">Smart</span>
-                    <span style="--i:4;">Contract</span>
-                    <span style="--i:5;">Tokens</span>
-                    <span style="--i:6;">on</span>
-                    <span style="--i:7;">HyperPay</span>
-                    <span style="--i:8;">Wallet</span>
-                    <span style="--i:9;">!</span>
-                </a>
-            </p>
-        </div>
-        <div style="margin-top: 250px; height:880px;">
-            <div class="jsx-3634339946 technical-title" style="margin-top: 72px;">
-                <div style="width:100%" class="jsx-532264764">
-                    <div style="display:flex;justify-content:center;flex-direction:row-reverse;align-items:center"
-                         class="jsx-532264764 index-title">
-                         <span class="jsx-532264764 redline"></span>
-                        <h2 class="jsx-532264764 fontTit" style="color:#fff; font-size:28px">Highlight Features</h2>
-                        <span class="jsx-532264764 redline"></span>
+                <div class="company-intro" style="max-width: 1000px; margin: 40px auto;">
+                    <p class="intro-main" style="font-size: 24px; color: #fff; text-align: center; margin-bottom: 30px;">
+                        专注于提供高质量IT解决方案的技术服务商
+                    </p>
+                    
+                    <div class="service-tags" style="text-align: center; color: #fff; font-size: 20px; margin: 25px 0;">
+                        <span style="margin: 0 15px;">IT定制开发</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span style="margin: 0 15px;">AI技术咨询</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span style="margin: 0 15px;">区块链解决方案</span>
                     </div>
                 </div>
             </div>
-            <!--short Introduction-->
-            <div style="margin-top: 14px">
-                <p class="bg-secondary" style="color: #fff ;font-size: 18px; text-align: center;">
-                    Scalable, Secure, Decentralized</br>
-Sharding, ZPoW Consensus Algorithm, Stem Subchain Protocol</p>
-            </div>
 
-            <div class="technical-ul" style="margin-top: 82px;">
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/throughput.png" alt="" class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg">
-                            <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">High Throughput</h2>
+            <!-- 其他内容继续保持不变 -->
+            <div style="margin-top: 120px; height:780px;">
+                <div class="jsx-3634339946 technical-title" style="margin-top: 50px;">
+                    <div style="width:100%" class="jsx-532264764">
+                        <div style="display:flex;justify-content:center;flex-direction:row-reverse;align-items:center"
+                             class="jsx-532264764 index-title">
+                             <span class="jsx-532264764 redline"></span>
+                            <h2 class="jsx-532264764 fontTit" style="color:#2c3e50; font-size:28px">核心优势</h2>
+                            <span class="jsx-532264764 redline"></span>
                         </div>
-                        <p class="jsx-4077136523 text-center" style="font-size:15px;">Transaction speed can be as high as 2000 Tx/S.</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
                     </div>
                 </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/mine2.png" alt=""
-                                                              class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg"><h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">
-                            Mining</h2></div>
-                        <p class="jsx-4077136523 text-center"  style="font-size:15px;">Easy setup and support different operation systems.</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
-                    </div>
+            
+                <div style="margin-top: 14px">
+                    <p class="bg-secondary" style="color: #34495e; font-size: 18px; text-align: center;">
+                        专业技术 · 创新方案 · 优质服务<br>
+                        深耕IT领域，助力企业数字化转型
+                    </p>
                 </div>
 
-                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/scalability.png" alt=""
-                                                              class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg"><h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">
-                            Scalability</h2></div>
-                        <p class="jsx-4077136523 text-center"  style="font-size:15px;">Network can be scaled up horizontally and vertically using sharding and Stem subchain respectively.</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/hetero.png" alt="" class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg">
-                            <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">Stem Subchain</h2>
+                <div class="technical-ul" style="margin-top: 62px;">  
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-laptop-code" style="font-size: 42px; color: #00b4ff; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">IT定制开发</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">提供专业的企业应用开发与系统集成服务，满足客户个性化需求。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
                         </div>
-                        <p class="jsx-4077136523 text-center"  style="font-size:15px;">Original Stem subchain protocol supports a broad range of applications.</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
                     </div>
-                </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/anti.png" alt="" class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg">
-                            <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">Concensus Algorithm</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-robot" style="font-size: 42px; color: #00b4ff; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">AI技术咨询</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">专业的人工智能应用研发与落地实施，助力企业智能化升级。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
                         </div>
-                        <p class="jsx-4077136523 text-center"  style="font-size:15px;">Innovative and CPU friendly PoW consensus algorithm.</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
                     </div>
-                </div>
 
-                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-                    <div class="jsx-4077136523 tech-box"><img src="img/sc.png" alt="" class="jsx-4077136523" style="width:20%; height:20%">
-                        <div class="jsx-4077136523 techTitle-bg">
-                            <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">Smart Contracts</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-cubes" style="font-size: 42px; color: #4a90e2; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">区块链解决方案</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">提供区块链技术咨询与解决方案，为企业数字资产提供保障。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
                         </div>
-                        <p class="jsx-4077136523 text-center"  style="font-size:15px;">Compatible with Ethereum EVM and supports all kinds of industry applications</p>
-                        <div class="jsx-4077136523 tech-shade"></div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-users-cog" style="font-size: 42px; color: #4a90e2; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">专业团队</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">拥有经验丰富的技术专家团队，提供全方位的技术支持。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-lightbulb" style="font-size: 42px; color: #4a90e2; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">创新能力</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">持续关注技术发展前沿，为客户提供创新解决方案。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
+                        <div class="jsx-4077136523 tech-box" style="text-align: center;">
+                            <i class="fas fa-award" style="font-size: 42px; color: #4a90e2; margin: 10px 0 8px 0; display: inline-block;"></i>
+                            <div class="jsx-4077136523 techTitle-bg" style="margin-top: -3px;">
+                                <h2 class="jsx-4077136523 text-center text-capitalize bg-secondary">优质服务</h2>
+                            </div>
+                            <p class="jsx-4077136523 text-center" style="font-size:15px;">提供专业、高效、可靠的技术服务和持续支持。</p>
+                            <div class="jsx-4077136523 tech-shade"></div>
+                        </div>
                     </div>
                 </div>
-
- 
-
             </div>
         </div>
 
 
     </div>
 </div>
-<footer style="background-color: #000">
-    <div class="container container-fluid" style="margin-top: 0px; margin-bottom: 20px; color: #fff;font-size: 12px;">
-        <div class=" text-center"> COPYRIGHT©2020 GeekSphere Dev Team</div>
-       <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="right: 0px;text-align: right">Please beware of fake
-            accounts. For more information,please follow the official media platform of SCDO BlockChain.
-        </div>-->
+<footer style="margin-top: 20px;">
+    <div style="text-align: center; padding: 20px 0;">
+        <div style="color: #333333;"> COPYRIGHT©2025 GeekSphere Dev Team</div>
     </div>
 </footer>
 </body>
 </html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  /* 更清爽的背景渐变 */
+            min-height: 100vh;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    
+        .navbar-transparent {
+            background: #ffffff;  /* 纯白色背景 */
+            border: none;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* 导航栏文字颜色 */
+        .navbar-nav > li > a {
+            color: #2c3e50 !important;  /* 深蓝灰色 */
+        }
+        
+        /* 下拉菜单文字颜色 */
+        .dropdown-menu > li > a {
+            color: #2c3e50 !important;
+        }
+    
+        /* 主标题文字 */
+        .container.container-fluid > div:first-child {
+            color: #2c3e50 !important;
+        }
+    
+        /* 公司介绍文字 */
+        .intro-main {
+            color: #34495e !important;
+        }
+    
+        /* 服务标签文字 */
+        .service-tags {
+            color: #2c3e50 !important;
+        }
+    
+        /* 核心优势板块的文字颜色调整 */
+            /* 核心优势标题和副标题 */
+            .jsx-532264764.fontTit {
+                color: #2c3e50 !important;
+            }
+            
+            /* 核心优势说明文字 */
+            .bg-secondary {
+                color: #34495e !important;
+                background: rgba(52, 152, 219, 0.1) !important;
+            }
+        
+            /* 卡片标题 */
+            .tech-box .techTitle-bg h2 {
+                color: #2c3e50 !important;  /* 改为深蓝灰色 */
+            }
+        
+            /* 卡片描述文字 */
+            .tech-box p {
+                color: #34495e !important;  /* 改为稍浅的蓝灰色 */
+            }
+        
+            /* 分隔点 */
+            .bg-secondary span {
+                color: #7f8c8d !important;
+            }
+        </style>
+    </style>
+</head>
+<body>
+    <style>
+        .tech-box i {
+            color: #00b4ff !important;  /* 更亮的蓝色 */
+            text-shadow: 0 0 10px rgba(0, 180, 255, 0.5);  /* 添加发光效果 */
+            transition: all 0.3s ease;
+        }
+        
+        .tech-box:hover i {
+            color: #40c4ff !important;  /* 悬停时颜色更亮 */
+            text-shadow: 0 0 15px rgba(0, 180, 255, 0.7);  /* 悬停时发光效果增强 */
+        }
+    </style>
+</body>
+<style>
+    .tech-box .techTitle-bg h2 {
+        background: rgba(0, 180, 255, 0.15) !important;  /* 半透明的蓝色背景 */
+        border-radius: 4px;
+        padding: 8px 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 180, 255, 0.2);
+        box-shadow: 0 0 15px rgba(0, 180, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .tech-box:hover .techTitle-bg h2 {
+        background: rgba(0, 180, 255, 0.25) !important;
+        box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
+        border-color: rgba(0, 180, 255, 0.3);
+    }
+</style>
+<style>
+    /* tech-box 内部文字样式 */
+    .jsx-4077136523.tech-box p.text-center {
+        color: #34495e !important;  /* 使用深蓝灰色 */
+        font-size: 15px;
+    }
+
+    /* 确保样式优先级足够高 */
+    .technical-ul .tech-box p.jsx-4077136523.text-center {
+        color: #34495e !important;
+    }
+</style>
+<style>
+    /* 顶部 banner 区域样式 */
+    .banner-wrapper {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/banner.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 200px 0 100px;
+        text-align: center;
+    }
+
+    /* 移除重复的 banner 样式 */
+    .container.container-fluid > div:first-child {
+        background-image: none;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        left: auto;
+        right: auto;
+    }
+</style>
+<style>
+    /* Footer 样式 */
+    footer .container.container-fluid {
+        color: #333333 !important;
+    }
+    
+    footer .container.container-fluid .text-center {
+        color: #333333 !important;
+    }
+</style>
+<style>
+/* Banner 区域文字样式 */
+    .container.container-fluid > div:first-child,
+    .intro-main,
+    .service-tags {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 服务标签样式优化 */
+    .service-tags span {
+        color: #ffffff !important;
+    }
+    
+    .service-tags span:nth-child(even) {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+</style>
